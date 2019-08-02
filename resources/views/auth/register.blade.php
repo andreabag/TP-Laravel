@@ -150,7 +150,6 @@
                             </div>
                         </div>
                     </form>
-                    @dd($errors->all())
                 </div>
             </div>
         </div>
