@@ -17,8 +17,7 @@ class ArticulosController extends Controller
 
     public function index()
     {
-      $articulos = Articulo::all();
-
+      $articulos = Articulo::paginate(4);
       $vac = compact("articulos");
       return view("listadoArticulos", $vac);
     }
@@ -47,7 +46,7 @@ class ArticulosController extends Controller
         $articulo->$req['precio'];
         $articulo->$req['descuento'];
         $articulo->save();
-        return redirect("")
+        return redirect("");
     }
 
     /**
