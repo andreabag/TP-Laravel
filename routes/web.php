@@ -21,3 +21,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articulos', 'ArticulosController@index');
 Route::get('/articulos/{id}', 'ArticulosController@show');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

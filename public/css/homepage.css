@@ -1,0 +1,106 @@
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #b6b6b6;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main-footer .foot-service{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 30%;
+}
+.main-footer .foot-service i{
+  font-size: 1.5em;
+  margin: 1em;
+}
+.main-footer .foot-service p,
+.main-footer .foot-service h4{
+  text-align: center;
+}
+
+.carousel-inner  img {
+  margin: 0 auto;
+}
+
+.whatsappDiv {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .8);
+  float: right;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+}
+.whatsappDiv i {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  margin-left: 12px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-device-width:768px){
+  .main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-footer .foot-service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    height: 200px;
+  }
+  .whatsappDiv{
+    display: block;
+  }
+}
+
+@media only screen and (max-device-width:425px){
+  .main-footer .foot-service{
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+/*
+@media only screen and (min-device-width:1024px){
+.main-footer {
+  display: block;
+  margin-top: 5vh;
+  padding-top: 30px;
+  height: 30vh;
+  width: 100%;
+}
+.main-footer ul {
+  overflow: hidden;
+  display: inline-block;
+  padding-left: 22%;
+  padding-top: 50px;
+}
+.main-footer li {
+  float: left;
+
+  background: transparent;
+  line-height: 6px;
+}
+.main-footer li:last-child{
+  border-right: none;
+}
+
+
+}
+*/
