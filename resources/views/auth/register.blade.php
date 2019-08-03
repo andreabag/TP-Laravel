@@ -67,12 +67,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Birthdate') }}</label>
+                            <label for="birthdate" class="col-md-4 col-form-label text-md-right">{{ __('Birthdate') }}</label>
 
                             <div class="col-md-6">
-                                <input id="user" type="text" class="form-control @error('birthdate') is-invalid @enderror" name="province" value="{{ old('birthdate') }}" required autocomplete="birthdate" autofocus>
+                                <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') }}" required autocomplete="birthdate" autofocus>
 
-                                @error('province')
+                                @error('birthdate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -83,7 +83,7 @@
                         <div class="form-group row">
                             <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
                             <div class="col-md-6">
-                            <select class="form-control" name="provincia" id="provincia">
+                            <select class="form-control" name="province" id="provincia">
                               <option value="seleccion">Seleccione una opcion</option>
                               <option value="Buenos Aires">Bs. As.</option>
                               <option value="Catamarca">Catamarca</option>
