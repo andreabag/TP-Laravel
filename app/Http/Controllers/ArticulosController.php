@@ -46,7 +46,11 @@ class ArticulosController extends Controller
         $articulo->$req['precio'];
         $articulo->$req['descuento'];
         $articulo->save();
+<<<<<<< HEAD
         return redirect("");
+=======
+        
+>>>>>>> 16112e48b758e571966d421092ed108d424f9835
     }
 
     /**
