@@ -70,18 +70,14 @@ class ArticulosController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a§ newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $articulo->$req['foto'];
-        $articulo->$req['titulo'];
-        $articulo->$req['descripcion'];
-        $articulo->$req['precio'];
-        $articulo->save();
+      
     }
 
     /**
