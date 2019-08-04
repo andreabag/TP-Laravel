@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ 'Administrador' }}</div>
     <div class="card-body">
-        <form method="POST" action="/agregarArticulo" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('administrador') }}" enctype="multipart/form-data">
             {{csrf_field()}}
 
       <div class="form-group row">

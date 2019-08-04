@@ -22,10 +22,10 @@ class ArticulosController extends Controller
       return view("listadoArticulos", $vac);
     }
 
-    public function agregar(Request, $req)
+    public function agregar(Request $req)
     {
       $articuloNuevo = new Articulo();
-      $articuloNuevo->titluo = $req["titulo"];
+      $articuloNuevo->titulo = $req["titulo"];
       $articuloNuevo->foto = $req["foto"];
       $articuloNuevo->descripcion = $req["descripcion"];
 
