@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -43,7 +43,7 @@
           <label for="foto" class="col-md-4 col-form-label text-md-right">{{ 'Foto' }}</label>
 
           <div class="col-md-6">
-              <input id="foto" type="file" class="form-control @error('titulo') is-invalid @enderror" name="titulo" required autocomplete="titulo">
+              <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="titulo" required autocomplete="titulo">
 
               @error('descripcion')
                   <span class="invalid-feedback" role="alert">
@@ -76,3 +76,4 @@
           </div>
       </div>
     </form>
+    @endsection
