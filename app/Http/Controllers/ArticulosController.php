@@ -22,6 +22,43 @@ class ArticulosController extends Controller
       return view("listadoArticulos", $vac);
     }
 
+    public function agregar(Request, $req)
+    {
+      $articuloNuevo = new Articulo();
+      $articuloNuevo->titluo = $req["titulo"];
+      $articuloNuevo->foto = $req["foto"];
+      $articuloNuevo->descripcion = $req["descripcion"];
+
+      $articuloNuevo->save();
+      return redirect('/administrador');
+
+    }
+    public function campera()
+    {
+      $articulos = Articulo::where("descripcion", "=", "%campera%")
+      ->orderBy("titulo")
+      ->get();
+      $vac = compact ("articulos");
+      return view("listadoArticulos", $vac);
+    }
+
+    public function pantalon()
+    {
+      $articulos = Articulo::where("descripcion", "=", "%pantalon%")
+      ->orderBy("titulo")
+      ->get();
+      $vac = compact ("articulos");
+      return view("listadoArticulos", $vac);
+    }
+
+    public function buzo()
+    {
+      $articulos = Articulo::where("descripcion", "=", "%buzo%")
+      ->orderBy("titulo")
+      ->get();
+      $vac = compact ("articulos");
+      return view("listadoArticulos", $vac);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +81,6 @@ class ArticulosController extends Controller
         $articulo->$req['titulo'];
         $articulo->$req['descripcion'];
         $articulo->$req['precio'];
-        $articulo->$req['descuento'];
         $articulo->save();
     }
 
