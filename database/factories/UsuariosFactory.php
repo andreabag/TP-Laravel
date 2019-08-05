@@ -11,7 +11,7 @@ $factory->define(User::class, function (Faker $faker) {
       "surname" => $faker->sentence(6),
       "user" => $faker->sentence(8),
       "birthdate" => $faker->date(),
-      "avatar" => $faker->sentence(20),
+      "avatar" => $faker->sentence(10),
       "province" => $faker->sentence(6),
       "password" => $faker->sentence(10),
       "email" => $faker->sentence(15)
