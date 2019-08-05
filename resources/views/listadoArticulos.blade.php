@@ -40,7 +40,7 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="img/art1.png" alt="">
+          <img class="card-img-top" src="{{ $articulo->foto }}" alt="">
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>

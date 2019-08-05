@@ -17,7 +17,7 @@ class ArticulosController extends Controller
 
     public function index()
     {
-      $articulos = Articulo::paginate(4);
+      $articulos = Articulo::paginate(8);
       $vac = compact("articulos");
       return view("listadoArticulos", $vac);
     }

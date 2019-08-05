@@ -18,6 +18,7 @@ class CreateArticulosTable extends Migration
             $table->string('foto');
             $table->string('titulo');
             $table->string('descripcion');
+            $table->integer('precio');
             $table->timestamps();
         });
     }
