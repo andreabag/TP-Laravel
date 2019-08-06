@@ -15,9 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Michroma&display=swap" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -29,8 +32,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     Big Fashion
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -44,13 +48,13 @@
 
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tshirt carrito-nav"></i>COLECCION</a>
+                      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COLECCION</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">Camperas</a>
-                        <a class="dropdown-item" href="#">Remeras manga larga</a>
-                        <a class="dropdown-item" href="#">Remeras manga Corta</a>
-                        <a class="dropdown-item" href="#">Buzo</a>
-                        <a class="dropdown-item" href="#">Pantalones</a>
+                        <a class="dropdown-item" href="{{ url('/articulos') }}">CAMPERAS</a>
+                        <a class="dropdown-item" href="#">REMERAS MANGA LARGA</a>
+                        <a class="dropdown-item" href="#">REMERAS MANGA CORTA</a>
+                        <a class="dropdown-item" href="#">BUZO</a>
+                        <a class="dropdown-item" href="#">PANTALONES</a>
                       </div>
                       </li>
                   <li class="nav-item">
@@ -58,7 +62,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-envelope carrito-nav"></i></i> CONTACTO</a>
+                    <a class="nav-link" href="#"></i> CONTACTO</a>
                   </li>
                 </ul>
                     <!-- Left Side Of Navbar -->
@@ -73,11 +77,11 @@
                         @guest
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
                                 </li>
                             @endif
                         @else

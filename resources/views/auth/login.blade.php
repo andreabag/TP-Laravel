@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/login.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -52,13 +55,14 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                            <div class="col-md-8 offset-md-0">
+                                <button type="button" class="btn btn-secondary">{{ __('Login') }}</button>
+
+
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+
+                                    <a class="btn btn-link" style= "color:black" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
