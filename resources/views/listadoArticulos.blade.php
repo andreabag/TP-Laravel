@@ -1,8 +1,9 @@
 
 @extends('layouts.app')
-<link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
-@section('content')
 
+@section('content')
+<link href="{{ asset('css/articulos.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,14 +29,6 @@
 
   <!-- Page Content -->
   <div class="container">
-
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-      <h1 class="display-3">BIG FASHION</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-
-    </header>
-    
     <div class="row text-center">
     @foreach ($articulos as $articulo)
       <div class="col-lg-3 col-md-6 mb-4">
@@ -46,8 +39,10 @@
             <p class="card-text">{{ $articulo->descripcion }}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">VER MÁS!</a>
+          <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
+          <button type="button" class="btn btn-secondary btn-sm">Agregar al carrito</button>
           </div>
+
         </div>
       </div>
     @endforeach
@@ -56,10 +51,29 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptas quae, quod omnis commodi odit distinctio accusamus atque reprehenderit provident consequatur voluptatum ab ex iste debitis quaerat eius laborum! Tempora?</p>
+  <footer class="main-footer">
+    <div class="foot-service">
+      <i class="fas fa-truck"></i>
+      <h4>Envíos gratis</h4>
+      <p>Envíos gratis en las compras superiores a $2000.</p>
     </div>
+    <div class="foot-service">
+      <i class="fas fa-store-alt"></i>
+      <h4>Pick up store</h4>
+      <p>Compra online y retirá tu compra por nuestro local.</p>
+    </div>
+    <div class="foot-service">
+      <i class="fas fa-undo-alt"></i>
+      <h4>Cambios gratis</h4>
+      <p>Tenés 30 días para realizar cambios.</p>
+
+    </div>
+
+
+  </footer>
+  <div class="whatsappDiv">
+    <i class="fab fa-whatsapp"></i>
+  </div>
     <!-- /.container -->
   </footer>
 
