@@ -51,10 +51,10 @@
                       <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COLECCION</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="{{ url('/articulos') }}">CAMPERAS</a>
-                        <a class="dropdown-item" href="#">REMERAS MANGA LARGA</a>
-                        <a class="dropdown-item" href="#">REMERAS MANGA CORTA</a>
-                        <a class="dropdown-item" href="#">BUZO</a>
-                        <a class="dropdown-item" href="#">PANTALONES</a>
+                        <a class="dropdown-item" href="{{ url('/articulos') }}">REMERAS MANGA LARGA</a>
+                        <a class="dropdown-item" href="{{ url('/articulos') }}">REMERAS MANGA CORTA</a>
+                        <a class="dropdown-item" href="{{ url('/articulos') }}">BUZO</a>
+                        <a class="dropdown-item" href="{{ url('/articulos') }}">PANTALONES</a>
                       </div>
                       </li>
                   <li class="nav-item">

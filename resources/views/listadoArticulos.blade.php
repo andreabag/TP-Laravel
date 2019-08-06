@@ -37,6 +37,7 @@
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
+            <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
           <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
