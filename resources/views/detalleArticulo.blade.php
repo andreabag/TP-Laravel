@@ -18,5 +18,12 @@
           </div>
         </div>
       </div>
+
+
+      <form action="/borrarArticulo" method="post"></form>
+      {{ csrf_field() }}
+      <input type="hidden" name="id" value="{{$articulo->id}}">
+      <input type="submit" name="" value="borrarArticulo">
+
   </body>
 </html>

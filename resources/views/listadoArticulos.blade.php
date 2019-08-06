@@ -41,6 +41,19 @@
           <div class="card-footer">
           <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
           <button type="button" class="btn btn-secondary btn-sm">Agregar al carrito</button>
+
+          <form action="/borrarArticulo" method="post">
+          {{csrf_field()}}
+          <input type="hidden" name="id" value="{{$articulo->id}}">
+          <button type="submit" name="borrate">Borrar</button>
+
+          </form>
+          <form action="/modificarArticulo/{{$articulo->id}}" method="get">
+
+          <button type="submit" name="modificar">Modificar</button>
+
+          </form>
+
           </div>
 
         </div>

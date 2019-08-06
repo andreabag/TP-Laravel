@@ -32,7 +32,6 @@ Route::get('/administrador', function()
 Route::post('/administrador', 'ArticulosController@agregar');
 
 
-Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');
-
 Route::post('/borrarArticulo', 'ArticulosController@borrar');
-Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo');
+
+Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');

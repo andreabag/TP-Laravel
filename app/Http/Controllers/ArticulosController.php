@@ -33,6 +33,32 @@ class ArticulosController extends Controller
       return redirect('/administrador');
 
     }
+
+    public function borrar(Request $formulario){
+      $id = $formulario["id"];
+      $articulo= Articulo::find($id);
+      $articulo->delete();
+      return redirect ("/articulos");
+    }
+
+    public function modificar($id){
+      $articulo = Articulo::find($id);
+      return View('/modificarArticulo', compact('articulo'));
+    }
+
+      public function actualizarArticulo(Request $r)
+      {
+        $articulo = Articulo::find($r["id"]);
+        $articulo->titulo = $r["titulo"];
+        //$articulo->foto = $r["foto"];
+        $articulo->descripcion = $r["descripcion"];
+        $articulo->save();
+        return redirect('/articulos');
+
+
+      }
+
+
     public function campera()
     {
       $articulos = Articulo::where("descripcion", "=", "%campera%")
@@ -77,7 +103,7 @@ class ArticulosController extends Controller
      */
     public function store(Request $request)
     {
-      
+
     }
 
     /**
