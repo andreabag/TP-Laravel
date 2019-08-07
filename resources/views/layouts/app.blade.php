@@ -62,7 +62,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#"></i> CONTACTO</a>
+                    <a class="nav-link" href="{{ url('/contacto') }}"></i> CONTACTO</a>
                   </li>
                 </ul>
                     <!-- Left Side Of Navbar -->
