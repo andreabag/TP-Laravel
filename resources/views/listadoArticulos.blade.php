@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Heroic Features - Start Bootstrap Template</title>
+  <title>Big Fashion - Catalogo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,39 +29,51 @@
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row text-center">
+    <form action="articulos" method="GET">
+      <input type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
+    </form>
+    <div class="liveSearch col-md-6">
+      <table class="table table-dark table-hover">
+        <tbody id="respuesta">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="row text-center  tarjetas">
     @foreach ($articulos as $articulo)
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-12 mb-2">
         <div class="card h-100">
           <img class="card-img-top" src="{{ $articulo->foto }}" alt="">
           <div class="card-body">
-            <h4 class="card-title">{{ $articulo->titulo}}</h4>
-            <p class="card-text">{{ $articulo->descripcion }}</p>
-            <h5 class="card-title">${{ $articulo->precio}}</h5>
-          </div>
-          <div class="card-footer">
-          <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
-          <button type="button" class="btn btn-secondary btn-sm">Agregar al carrito</button>
-
-          <form action="/borrarArticulo" method="post">
-          {{csrf_field()}}
-          <input type="hidden" name="id" value="{{$articulo->id}}">
-          <button type="submit" name="borrate">Borrar</button>
-
-          </form>
-          <form action="/modificarArticulo/{{$articulo->id}}" method="get">
-
-          <button type="submit" name="modificar">Modificar</button>
-
-          </form>
-
-          </div>
-
+              <h4 class="card-title">{{ $articulo->titulo}}</h4>
+              <p class="card-text">{{ $articulo->descripcion }}</p>
+              <h5 class="card-title">$ {{ $articulo->precio}}</h5>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
+              <button type="button" class="btn btn-secondary btn-sm">Agregar al carrito</button>
+  
+              <form action="/borrarArticulo" method="post">
+              {{csrf_field()}}
+              <input type="hidden" name="id" value="{{$articulo->id}}">
+              <button type="submit" name="borrate">Borrar</button>
+  
+              </form>
+              <form action="/modificarArticulo/{{$articulo->id}}" method="get">
+  
+              <button type="submit" name="modificar">Modificar</button>
+  
+              </form>
+            </div>  
         </div>
       </div>
     @endforeach
   </div>
-  {{ $articulos->links() }}
+  </div>
+
+  <div class="col-md-12">
+    {{ $articulos->links() }}
+  </div>
   <!-- /.container -->
 
   <!-- Footer -->
@@ -88,12 +100,34 @@
   <div class="whatsappDiv">
     <i class="fab fa-whatsapp"></i>
   </div>
-    <!-- /.container -->
-  </footer>
-
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
+<script type="text/javascript">
+$( document ).ready(function() {
+    console.log( "ready!" );
+  $('#buscar').on('keyup',function(){
+    $value=$(this).val();
+    $.ajax({
+      type : 'get',
+      url : '{{URL::to('search')}}',
+      data:{'search':$value},
+      success:function(data){
+      $('#respuesta').html(data);
+     
+      },
+      fail:function(data){
+        alert("uh");
+      }
+      });
+  });
+});
+
+  </script>
+  <script type="text/javascript">
+  $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+  </script>
+  
 @endsection

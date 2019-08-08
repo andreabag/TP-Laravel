@@ -15,11 +15,34 @@ class ArticulosController extends Controller
      */
 
 
-    public function index()
+    public function index(Request $r)
     {
-      $articulos = Articulo::paginate(8);
+      $b = $r->input('buscar');
+        $like = '%' . $b . '%';
+        $articulos = Articulo::
+                where('titulo','like',$like)
+                ->paginate(8);
+
       $vac = compact("articulos");
+
       return view("listadoArticulos", $vac);
+    }
+
+    public function buscar(Request $r){
+      $output = "";
+      if($r->ajax() && $r->input('search') != ""){
+        $b = $r->input('search');
+        $like = '%' . $b . '%';
+        $articulos = Articulo::
+                where('titulo','like',$like)->take(5)->get();
+        if($articulos){
+          foreach($articulos as $articulo){
+            $output .= '<tr><td>'. $articulo->titulo .'</td></tr>';
+          }
+        }
+      }
+      
+      return Response($output);
     }
 
     public function agregar(Request $req)
