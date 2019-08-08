@@ -16,3 +16,14 @@ color: black;
 .card{
 width:70%;
 }
+
+h2{
+  font-style: font-family: 'Teko', sans-serif;
+  font-size: 25px;
+}
+
+p{
+  margin: 15px;
+  font-style: font-family: 'Teko', sans-serif;
+  font-size: 20px;
+}

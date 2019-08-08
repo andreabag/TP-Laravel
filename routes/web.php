@@ -37,3 +37,6 @@ Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');
 Route::post('/borrarArticulo', 'ArticulosController@borrar');
 Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo');
 Route::get('/search','ArticulosController@buscar');
+Route::get('/contacto', function(){
+  return view('contacto');
+});
