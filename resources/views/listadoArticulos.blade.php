@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Heroic Features - Start Bootstrap Template</title>
+  <title>Big Fashion - Catalogo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,17 @@
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row text-center">
+    <form action="articulos" method="GET">
+      <input type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
+    </form>
+    <div class="liveSearch col-md-6">
+      <table class="table table-dark table-hover">
+        <tbody id="respuesta">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="row text-center  tarjetas">
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
@@ -90,7 +100,11 @@
       </div>
     @endforeach
   </div>
-  {{ $articulos->links() }}
+  </div>
+
+  <div class="col-md-12">
+    {{ $articulos->links() }}
+  </div>
   <!-- /.container -->
 
   <!-- Footer -->
@@ -117,12 +131,34 @@
   <div class="whatsappDiv">
     <i class="fab fa-whatsapp"></i>
   </div>
-    <!-- /.container -->
-  </footer>
-
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
+<script type="text/javascript">
+$( document ).ready(function() {
+    console.log( "ready!" );
+  $('#buscar').on('keyup',function(){
+    $value=$(this).val();
+    $.ajax({
+      type : 'get',
+      url : '{{URL::to('search')}}',
+      data:{'search':$value},
+      success:function(data){
+      $('#respuesta').html(data);
+
+      },
+      fail:function(data){
+        alert("uh");
+      }
+      });
+  });
+});
+
+  </script>
+  <script type="text/javascript">
+  $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+  </script>
+
 @endsection

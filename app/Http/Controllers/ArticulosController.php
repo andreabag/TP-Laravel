@@ -9,12 +9,38 @@ class ArticulosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+
+    public function index(Request $r)
     {
-      $articulos = Articulo::paginate(8);
+      $b = $r->input('buscar');
+        $like = '%' . $b . '%';
+        $articulos = Articulo::
+                where('titulo','like',$like)
+                ->paginate(8);
+
       $vac = compact("articulos");
+
       return view("listadoArticulos", $vac);
     }
+
+    public function buscar(Request $r){
+      $output = "";
+      if($r->ajax() && $r->input('search') != ""){
+        $b = $r->input('search');
+        $like = '%' . $b . '%';
+        $articulos = Articulo::
+                where('titulo','like',$like)->take(5)->get();
+        if($articulos){
+          foreach($articulos as $articulo){
+            $output .= '<tr><td>'. $articulo->titulo .'</td></tr>';
+          }
+        }
+      }
+
+      return Response($output);
+    }
+
     public function agregar(Request $req)
     {
       $articuloNuevo = new Articulo();
@@ -45,7 +71,7 @@ class ArticulosController extends Controller
         if($r->file("foto") != null){
           $ruta = $r->file("foto")->store("public");
           $nombreArchivo = basename($ruta);
-          $articulo->foto = $nombreArchivo;  
+          $articulo->foto = $nombreArchivo;
         }
         $articulo->descripcion = $r["descripcion"];
         $articulo->precio = $r["precio"];

@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,25 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/articulos', 'ArticulosController@index');
 Route::get('/articulos/{id}', 'ArticulosController@show');
 Route::get('/articulos/camperas', 'ArticulosController@campera');
 Route::get('/articulos/camperas', 'ArticulosController@buzo');
 Route::get('/articulos/camperas', 'ArticulosController@pantalon');
+
 Route::get('/administrador', function()
 {
   return view ('agregarArticulo');
 });
 Route::post('/administrador', 'ArticulosController@agregar');
-Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');
+
+
 Route::post('/borrarArticulo', 'ArticulosController@borrar');
-Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo');
-Route::get('/search','ArticulosController@buscar');
-Route::get('/contacto', function(){
-  return view('contacto');
-});
+
+Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');
