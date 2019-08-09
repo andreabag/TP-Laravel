@@ -24,6 +24,32 @@
 
 </head>
 
+
+@extends('layouts.app')
+
+@section('content')
+<link href="{{ asset('css/articulos.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Heroic Features - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
 <body>
 
 
@@ -31,27 +57,30 @@
   <div class="container">
     <div class="row text-center">
     @foreach ($articulos as $articulo)
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="{{ $articulo->foto }}" alt="">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-150">
+          <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
             <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
-          <button type="button" class="btn btn-secondary btn-sm">Detalle</button>
-          <button type="button" class="btn btn-secondary btn-sm">Agregar al carrito</button>
+          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
 
-          <form action="/borrarArticulo" method="post">
+
+          <form id="borrarform" action="/borrarArticulo" method="post">
           {{csrf_field()}}
           <input type="hidden" name="id" value="{{$articulo->id}}">
-          <button type="submit" name="borrate">Borrar</button>
+          <a onclick="document.getElementById('borrarForm').submit()"><i class="fas fa-trash-alt"></i></a>
 
+
+
+          <a href="#"></a>
           </form>
           <form action="/modificarArticulo/{{$articulo->id}}" method="get">
+          <i class="fas fa-cog"></i>
 
-          <button type="submit" name="modificar">Modificar</button>
 
           </form>
 

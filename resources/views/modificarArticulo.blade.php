@@ -45,7 +45,7 @@
           <label for="foto" class="col-md-4 col-form-label text-md-right">{{ 'Foto' }}</label>
 
           <div class="col-md-6">
-              <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="titulo" autocomplete="titulo" >
+              <input id="foto" type="file"  class="form-control @error('foto') is-invalid @enderror" name="foto" autocomplete="foto" >
 
               @error('descripcion')
                   <span class="invalid-feedback" role="alert">

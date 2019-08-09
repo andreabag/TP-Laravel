@@ -48,8 +48,3 @@
 div.card h-100 img{
   width: 500px;
 }
-
-div.card-footer a{
-  background-color: grey;
-  border-color: black;
-}

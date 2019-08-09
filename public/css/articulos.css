@@ -1,7 +1,6 @@
 .main-footer {
   display: flex;
   justify-content: space-between;
-  background-color: #b6b6b6;
   flex-direction: row;
   width: 100%;
   margin-top: 30px;
@@ -26,4 +25,19 @@
 
 .card-body{
   background-color: white;
+}
+
+.container .card{
+border: none;
+}
+
+.card .card-footer{
+border: none;
+background-color: white;
+}
+
+.card-footer a{
+color: black;
+
+font-size: 50px;
 }
