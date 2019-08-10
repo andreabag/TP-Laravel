@@ -31,3 +31,6 @@ Route::get('/search','ArticulosController@buscar');
 Route::get('/contacto', function(){
   return view('contacto');
 });
+Route::get(‘/storage’, function() {
+Artisan::call(‘storage:link’);
+});
