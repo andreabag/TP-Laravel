@@ -55,15 +55,8 @@
                     <li class="nav-item">
 
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COLECCION</a>
-                      <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">CAMPERAS</a>
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">REMERAS MANGA LARGA</a>
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">REMERAS MANGA CORTA</a>
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">BUZO</a>
-                        <a class="dropdown-item" href="{{ url('/articulos') }}">PANTALONES</a>
-                      </div>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('/articulos') }}">COLECCION</a>
                       </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-percentage carrito-nav"></i></i> SALE</a>

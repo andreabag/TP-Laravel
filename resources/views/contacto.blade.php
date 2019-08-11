@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('NOS PODES CONTACTAR POR CUALQUIER CONSULTA:') }}</div>
+                <div class="card-header">{{ __('CONTACTANOS') }}</div>
 
 
                 <p><i class="far fa-envelope-open"></i> bigfashion@gmail.com</p>

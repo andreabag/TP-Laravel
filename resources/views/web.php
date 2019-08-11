@@ -21,9 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articulos', 'ArticulosController@index');
 Route::get('/articulos/{id}', 'ArticulosController@show');
-Route::get('/articulos/camperas', 'ArticulosController@campera');
-Route::get('/articulos/camperas', 'ArticulosController@buzo');
-Route::get('/articulos/camperas', 'ArticulosController@pantalon');
+
 
 Route::get('/administrador', function()
 {
