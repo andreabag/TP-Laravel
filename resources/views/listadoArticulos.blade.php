@@ -52,22 +52,6 @@
           <div class="card-footer">
           <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
 
-
-          <form id="borrarform" action="/borrarArticulo" method="post">
-          {{csrf_field()}}
-          <input type="hidden" name="id" value="{{$articulo->id}}">
-          <a onclick="document.getElementById('borrarForm').submit()"><i class="fas fa-trash-alt"></i></a>
-
-
-
-          <a href="#"></a>
-          </form>
-          <form action="/modificarArticulo/{{$articulo->id}}" method="get">
-          <i class="fas fa-cog"></i>
-
-
-          </form>
-
           </div>
 
         </div>
@@ -102,7 +86,7 @@
 
 
   </footer>
-  
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

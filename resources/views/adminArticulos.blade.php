@@ -53,17 +53,17 @@
           <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
 
 
-          <form id="borrarform" action="/borrarArticulo" method="post">
-          {{csrf_field()}}
-          <input type="hidden" name="id" value="{{$articulo->id}}">
-          <a onclick="document.getElementById('borrarForm').submit()"><i class="fas fa-trash-alt"></i></a>
+          <form action="/borrarArticulo" method="post">
+                   {{csrf_field()}}
+                   <input type="hidden" name="id" value="{{$articulo->id}}">
+                   <button type="submit" name="borrate">Borrar</button>
+
+                   </form>
+                   <form action="/modificarArticulo/{{$articulo->id}}" method="get">
+
+                   <button type="submit" name="modificar">Modificar</button>
 
 
-
-          <a href="#"></a>
-          </form>
-          <form action="/modificarArticulo/{{$articulo->id}}" method="get">
-          <i class="fas fa-cog"></i>
 
           </form>
 
