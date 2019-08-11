@@ -93,11 +93,11 @@
                 <div class="carousel-inner">
 
                   <div class="carousel-item active">
-                    <img class="d-block img-fluid " src="img/miko2019.jpg" alt="First slide">
+                    <img class="d-block img-fluid " src="storage/miko2019.jpg" alt="First slide">
                   </div>
 
                   <div class="carousel-item">
-                    <img class="d-block img-fluid" src="img/2.jpg" alt="Second slide">
+                    <img class="d-block img-fluid" src="storage/2.jpg" alt="Second slide">
                   </div>
 
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
