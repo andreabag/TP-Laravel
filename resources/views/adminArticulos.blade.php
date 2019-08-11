@@ -65,7 +65,6 @@
           <form action="/modificarArticulo/{{$articulo->id}}" method="get">
           <i class="fas fa-cog"></i>
 
-
           </form>
 
           </div>
