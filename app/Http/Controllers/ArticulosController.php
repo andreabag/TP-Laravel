@@ -67,13 +67,13 @@ class ArticulosController extends Controller
       $articuloNuevo->titulo = $req["titulo"];
       $articuloNuevo->descripcion = $req["descripcion"];
       $articuloNuevo->save();
-      return redirect('/administrador');
+      return redirect('/admin/agregarArticulo');
     }
     public function borrar(Request $formulario){
       $id = $formulario["id"];
       $articulo= Articulo::find($id);
       $articulo->delete();
-      return redirect ("/articulos");
+      return redirect ("/admin/articulos");
     }
     public function modificar($id){
       $articulo = Articulo::find($id);
@@ -91,7 +91,7 @@ class ArticulosController extends Controller
         $articulo->descripcion = $r["descripcion"];
         $articulo->precio = $r["precio"];
         $articulo->save();
-        return redirect('/articulos');
+        return redirect('/admin/articulos');
       }
     public function campera()
     {

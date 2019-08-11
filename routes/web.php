@@ -19,13 +19,13 @@ Route::get('/articulos/{id}', 'ArticulosController@show');
 Route::get('/articulos/camperas', 'ArticulosController@campera');
 Route::get('/articulos/camperas', 'ArticulosController@buzo');
 Route::get('/articulos/camperas', 'ArticulosController@pantalon');
-Route::get('/administrador', function(){
+Route::get('/admin/agregarArticulo', function(){
   return view ('agregarArticulo');
-});
+})->middleware("admin");
 Route::post('/administrador', 'ArticulosController@agregar');
-Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar');
-Route::post('/borrarArticulo', 'ArticulosController@borrar');
-Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo');
+Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar')->middleware("admin");
+Route::post('/borrarArticulo', 'ArticulosController@borrar')->middleware("admin");;
+Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo')->middleware("admin");;
 Route::get('/search','ArticulosController@buscar');
 Route::get('/contacto', function(){
   return view('contacto');
