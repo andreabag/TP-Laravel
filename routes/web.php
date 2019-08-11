@@ -19,8 +19,7 @@ Route::get('/articulos/{id}', 'ArticulosController@show');
 Route::get('/articulos/camperas', 'ArticulosController@campera');
 Route::get('/articulos/camperas', 'ArticulosController@buzo');
 Route::get('/articulos/camperas', 'ArticulosController@pantalon');
-Route::get('/administrador', function()
-{
+Route::get('/administrador', function(){
   return view ('agregarArticulo');
 });
 Route::post('/administrador', 'ArticulosController@agregar');
@@ -31,6 +30,4 @@ Route::get('/search','ArticulosController@buscar');
 Route::get('/contacto', function(){
   return view('contacto');
 });
-Route::get(‘/storage’, function() {
-Artisan::call(‘storage:link’);
-});
+Route::get('/admin/articulos', 'ArticulosController@adminIndex')->middleware("admin");

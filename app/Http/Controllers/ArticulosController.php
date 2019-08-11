@@ -23,6 +23,21 @@ class ArticulosController extends Controller
 
       return view("listadoArticulos", $vac);
     }
+    public function adminIndex(Request $r)
+    {
+      $b = $r->input('buscar');
+        $like = '%' . $b . '%';
+        $articulos = Articulo::
+                where('titulo','like',$like)
+                ->paginate(8);
+
+      $vac = compact("articulos");
+
+      return view("adminArticulos", $vac);
+    }
+
+
+
 
     public function buscar(Request $r){
       $output = "";

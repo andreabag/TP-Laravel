@@ -14,6 +14,7 @@ $factory->define(User::class, function (Faker $faker) {
       "avatar" => $faker->sentence(10),
       "province" => $faker->sentence(6),
       "password" => $faker->sentence(10),
-      "email" => $faker->sentence(15)
+      "email" => $faker->sentence(15),
+      "isAdmin" =>false
     ];
 });
