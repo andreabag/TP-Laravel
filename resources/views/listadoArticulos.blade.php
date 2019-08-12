@@ -17,7 +17,7 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
-          <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
+          <img class="card-img-top" src="storage/{{ $articulo->foto }}" alt="">
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
@@ -57,15 +57,8 @@
       <p>Tenés 30 días para realizar cambios.</p>
 
     </div>
-
-
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</body>
 <script type="text/javascript">
 $( document ).ready(function() {
     console.log( "ready!" );
