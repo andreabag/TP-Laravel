@@ -29,6 +29,7 @@
 
 .container .card{
 border: none;
+
 }
 
 .card .card-footer{
@@ -44,3 +45,9 @@ font-size: 50px;
 
 .foto {
   height: 350px;
+}
+
+
+.card-body{
+  height: 150px;
+}
