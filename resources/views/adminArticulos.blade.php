@@ -43,16 +43,16 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
-          <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
+          <div class="foto">
+            <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
+          </div>
+
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
             <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
-          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
-
-
           <form action="/borrarArticulo" method="post">
                    {{csrf_field()}}
                    <input type="hidden" name="id" value="{{$articulo->id}}">
