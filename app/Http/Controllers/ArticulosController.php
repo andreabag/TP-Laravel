@@ -66,6 +66,7 @@ class ArticulosController extends Controller
       $articuloNuevo->foto = $nombreArchivo;
       $articuloNuevo->titulo = $req["titulo"];
       $articuloNuevo->descripcion = $req["descripcion"];
+      $articuloNuevo->precio =$req["precio"];
       $articuloNuevo->save();
       return redirect('/admin/agregarArticulo');
     }
