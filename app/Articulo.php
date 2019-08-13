@@ -14,4 +14,8 @@ class Articulo extends Model
     public function articulosDetalle(){
       return $this->title . " " . $this->precio;
     }
+
+    public function carrito(){
+      return $this->hasMany(carritoPivot::class,'id_product');
+    }
 }

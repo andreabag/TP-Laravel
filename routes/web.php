@@ -31,3 +31,4 @@ Route::get('/contacto', function(){
   return view('contacto');
 });
 Route::get('/admin/articulos', 'ArticulosController@adminIndex')->middleware("admin");
+Route::get('/carrito','CarritoController@index');

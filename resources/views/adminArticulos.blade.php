@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<link href="{{ asset('css/articulos.css') }}" rel="stylesheet">
 @section('content')
   <!-- Page Content -->
   <div class="container">
@@ -66,7 +67,7 @@
       <p>Tenés 30 días para realizar cambios.</p>
     </div>
   </footer>
-  
+
 <script type="text/javascript">
 $( document ).ready(function() {
     console.log( "ready!" );
