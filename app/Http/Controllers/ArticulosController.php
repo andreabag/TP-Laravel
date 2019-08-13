@@ -94,6 +94,14 @@ class ArticulosController extends Controller
         $articulo->save();
         return redirect('/admin/articulos');
       }
+
+
+      public function detalle($id)
+      {
+          $articulo = Articulo::find($id);
+          return View('/detalleArticulo', compact('articulo'));
+      }
+
     public function campera()
     {
       $articulos = Articulo::where("descripcion", "=", "%campera%")
@@ -118,16 +126,16 @@ class ArticulosController extends Controller
       $vac = compact ("articulos");
       return view("listadoArticulos", $vac);
     }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function detalle($id)
-     {
-         $articulo = Articulo::find($id);
-         return View('/detalleArticulo', compact('articulo'));
-     }
+
+
 
 
     public function create()
