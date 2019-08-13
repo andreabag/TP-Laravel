@@ -16,7 +16,7 @@ class ArticulosController extends Controller
     public function index(Request $r)
     {
       $b = $r->input('buscar');
-        $like = '%' . $b . '%';p
+        $like = '%' . $b . '%';
         $articulos = Articulo::
                 where('titulo','like',$like)
                 ->paginate(9);
