@@ -123,6 +123,13 @@ class ArticulosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function detalle($id)
+     {
+         $articulo = Articulo::find($id);
+         return View('/detalleArticulo', compact('articulo'));
+     }
+
+
     public function create()
     {
         //

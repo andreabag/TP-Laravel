@@ -17,7 +17,8 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
-          <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
+          <a href="{{ url('/detalle') }}">
+          <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
@@ -25,9 +26,7 @@
           </div>
           <div class="card-footer">
           <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
-
           </div>
-
         </div>
       </div>
     @endforeach
