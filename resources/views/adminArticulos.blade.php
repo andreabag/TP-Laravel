@@ -68,27 +68,35 @@
     </div>
   </footer>
 
-<script type="text/javascript">
-$( document ).ready(function() {
-    console.log( "ready!" );
-  $('#buscar').on('keyup',function(){
-    $value=$(this).val();
-    $.ajax({
-      type : 'get',
-      url : '{{URL::to('search')}}',
-      data:{'search':$value},
-      success:function(data){
-      $('#respuesta').html(data);
-
-      },
-      fail:function(data){
-        alert("uh");
-      }
+  <script type="text/javascript">
+    $( document ).ready(function() {
+        console.log( "ready!" );
+      $('div').on('click',function(){
+        $('#respuesta').html('');
       });
-  });
-});
-
-  </script>
+      $('#buscar').on('keyup',function(){
+        $value=$(this).val();
+        $.ajax({
+          type : 'get',
+          url : '{{URL::to('search')}}',
+          data:{'search':$value},
+          success:function(data){
+            $('#respuesta').html('');
+            
+            $.each(JSON.parse(data),function(i,obj){
+              var row = $("<tr />");
+              $('#respuesta').append(row);
+              row.append($("<td><a class='listadoBusqueda' href='/detalleArticulo/"+obj.id+"'>" + obj.titulo+"</a></td>"));
+            });
+          },
+          fail:function(data){
+            alert("uh");
+          }
+          });
+      });
+    });
+    
+      </script>
   <script type="text/javascript">
   $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
   </script>

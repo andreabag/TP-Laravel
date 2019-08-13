@@ -57,3 +57,9 @@ tbody{
   background-color:#222222;
   z-index: 10;
 }
+.listadoBusqueda{
+  color: white;
+}
+.listadoBusqueda:hover{
+  color: azure;
+}

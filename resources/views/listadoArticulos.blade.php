@@ -6,7 +6,7 @@
 <div class="container">
     <h2 class="my-3"><i class="fas fa-tshirt"></i> Coleccion Invierno 2019</h2>
     <form autocomplete="off" action="articulos" method="GET">
-      <input autocomplete="off" type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
+      <input autocomplete="off" type="text" class="form-control col-md-4 my-2" id="buscar" name="buscar" placeholder="Buscar...">
     </form>
     <div class="liveSearch col-md-6">
       <table class="table table-dark table-hover">
@@ -72,6 +72,9 @@
 <script type="text/javascript">
 $( document ).ready(function() {
     console.log( "ready!" );
+  $('div').on('click',function(){
+    $('#respuesta').html('');
+  });
   $('#buscar').on('keyup',function(){
     $value=$(this).val();
     $.ajax({
@@ -79,8 +82,13 @@ $( document ).ready(function() {
       url : '{{URL::to('search')}}',
       data:{'search':$value},
       success:function(data){
-      $('#respuesta').html(data);
-
+        $('#respuesta').html('');
+        
+        $.each(JSON.parse(data),function(i,obj){
+          var row = $("<tr />");
+          $('#respuesta').append(row);
+          row.append($("<td><a class='listadoBusqueda' href='/detalleArticulo/"+obj.id+"'>" + obj.titulo+"</a></td>"));
+        });
       },
       fail:function(data){
         alert("uh");

@@ -48,14 +48,10 @@ class ArticulosController extends Controller
         $like = '%' . $b . '%';
         $articulos = Articulo::
                 where('titulo','like',$like)->take(5)->get();
-        if($articulos){
-          foreach($articulos as $articulo){
-            $output .= '<tr><td>'. $articulo->titulo .'</td></tr>';
-          }
-        }
+        
       }
 
-      return Response($output);
+      return Response($articulos->toJson());
     }
 
     public function agregar(Request $req)
