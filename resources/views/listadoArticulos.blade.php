@@ -13,18 +13,24 @@
         </tbody>
       </table>
     </div>
-    <div class="row text-center  tarjetas">
+    <div class="row text-center col-md-12 tarjetas">
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
+<<<<<<< HEAD
         <div class="card h-150">
           <a href="{{ url('/detalle') }}">
           <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt=""></a>
+=======
+        <div class="card">
+          <img class="card-img-top" src="storage/{{ $articulo->foto }}" alt="">
+>>>>>>> b11ef984eeb86b319e6d7ad3a7973841e4fc2632
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
-            <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
+              <h5 class="card-title">${{ $articulo->precio}}</h5>
+
           <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
           </div>
         </div>
@@ -56,15 +62,8 @@
       <p>Tenés 30 días para realizar cambios.</p>
 
     </div>
-
-
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</body>
 <script type="text/javascript">
 $( document ).ready(function() {
     console.log( "ready!" );
