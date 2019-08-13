@@ -30,7 +30,13 @@
             <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
-          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+            @guest
+            <p>Registrese para agregar al carrito</p>
+            @else   
+            <form action="agregarACarrito/{{ $articulo->id }}">
+              <button class="btn btn-dark w-50" type="submit"><i class="fas fa-cart-arrow-down"></i> Agregar</button>
+            </form>
+            @endguest
           </div>
         </div>
       </div>
