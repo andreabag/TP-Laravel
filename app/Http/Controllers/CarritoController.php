@@ -18,4 +18,29 @@ class CarritoController extends Controller
         return redirect('/');
     }
 
+    public function restar($id){
+        $articulo = carritoPivot::find($id);
+        $articulo->cantidad--;
+        if($articulo->cantidad == 0){
+            $this->eliminar($id);
+        }else{
+            $articulo->save();
+        }
+        
+        return redirect('carrito');
+    }
+
+    public function sumar($id){
+        $articulo = carritoPivot::find($id);
+        $articulo->cantidad++;
+        $articulo->save();
+        return redirect('carrito');
+    }
+    public function eliminar($id){
+        $articulo = carritoPivot::find($id);
+        $articulo->delete();
+
+        return redirect('carrito');
+    }
+
 }

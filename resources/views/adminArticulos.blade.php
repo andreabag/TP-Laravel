@@ -3,8 +3,12 @@
 @section('content')
   <!-- Page Content -->
   <div class="container">
-    <form action="articulos" method="GET">
-      <input type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
+    <h2><i class="fas fa-keyboard"></i> Panel de control</h2>
+    <form action="agregarArticulo">  
+      <button type="submit" class="btn btn-dark w-25"><i class="fas fa-plus"></i> Agregar Articulo</button>
+    </form>
+    <form autocomplete="off" action="#" method="GET">
+      <input autocomplete="off" type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
     </form>
     <div class="liveSearch col-md-6">
       <table class="table table-dark table-hover">
@@ -20,27 +24,20 @@
 
           <a href="{{ url("/detalleArticulo/{$articulo->id}") }}"><img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt=""></a>
 
-
-
-          <div class="card-body">
-
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
             <p class="card-text">{{ $articulo->descripcion }}</p>
             <h5 class="card-title">${{ $articulo->precio}}</h5>
           </div>
           <div class="card-footer">
-          <form action="/borrarArticulo" method="post">
-                   {{csrf_field()}}
-                   <input type="hidden" name="id" value="{{$articulo->id}}">
-                   <button type="submit" name="borrate">Borrar</button>
-
-                   </form>
-                   <form action="/modificarArticulo/{{$articulo->id}}" method="get">
-
-                   <button type="submit" name="modificar">Modificar</button>
-          </form>
-
+                  <form action="/borrarArticulo" method="post">
+                    {{csrf_field()}}
+                    <input type="hidden" name="id" value="{{$articulo->id}}">
+                    <button type="submit"class="btn btn-danger w-50" name="borrate"><i class="fas fa-skull-crossbones"></i> Borrar</button>
+                  </form>
+                  <form action="/modificarArticulo/{{$articulo->id}}" method="get">
+                    <button type="submit" class="btn btn-success w-50" name="modificar"><i class="fas fa-pencil-alt"></i> Modificar</button>
+                  </form>
           </div>
 
         </div>

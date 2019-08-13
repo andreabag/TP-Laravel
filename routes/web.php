@@ -33,3 +33,9 @@ Route::get('/contacto', function(){
 Route::get('/admin/articulos', 'ArticulosController@adminIndex')->middleware("admin");
 Route::get('/carrito','CarritoController@index');
 Route::get('/detalleArticulo/{id}', 'ArticulosController@detalle');
+
+
+Route::get('/eliminarDelCarrito/{id}', 'CarritoController@eliminar');
+Route::get('/restarUnaUnidad/{id}', 'CarritoController@restar');
+Route::get('/sumarUnaUnidad/{id}', 'CarritoController@sumar');
+

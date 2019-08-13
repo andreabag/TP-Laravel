@@ -76,4 +76,8 @@
           </div>
       </div>
     </form>
+
+    <form action="{{ url('/admin/articulos')  }}">  
+            <button type="submit" class="btn btn-dark w-50 my-4"><i class="fas fa-undo"></i> Volver a panel de control</button>
+</form>
     @endsection

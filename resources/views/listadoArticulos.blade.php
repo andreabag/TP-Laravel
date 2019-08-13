@@ -2,10 +2,11 @@
 @extends('layouts.app')
 <link href="{{ asset('css/articulos.css') }}" rel="stylesheet">
 @section('content')
-  <!-- Page Content -->
-  <div class="container">
-    <form action="articulos" method="GET">
-      <input type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
+<!-- Page Content -->
+<div class="container">
+    <h2 class="my-3"><i class="fas fa-tshirt"></i> Coleccion Invierno 2019</h2>
+    <form autocomplete="off" action="articulos" method="GET">
+      <input autocomplete="off" type="text" class="form-control col-md-6 my-2" id="buscar" name="buscar" placeholder="Buscar...">
     </form>
     <div class="liveSearch col-md-6">
       <table class="table table-dark table-hover">

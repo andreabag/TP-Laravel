@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<link href="{{ asset('css/carrito.css') }}" rel="stylesheet">
 @section('content')
 
 <div class="container">
@@ -19,10 +20,15 @@
                 {{ $articulo->cantidad }}
             </td>
             <td>
-                
-                <button class="btn btn-danger" type="submit"><i class="fas fa-minus"></i></button>
-                <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
-                
+                <form action="/eliminarDelCarrito/{{ $articulo->id }}">
+                    <button class="btn btn-dark" type="submit"><i class="fas fa-skull-crossbones"></i></button>
+                </form>
+                <form action="/restarUnaUnidad/{{ $articulo->id }}">
+                    <button class="btn btn-danger" type="submit"><i class="fas fa-minus"></i></button>
+                </form>
+                <form action="/sumarUnaUnidad/{{ $articulo->id }}">
+                    <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
+                </form>
             </td>
         </tr>
         @empty
@@ -31,8 +37,8 @@
     </tbody>
 </table>
 
-<form action="carrito" method="POST">
-    <button class="btn btn-dark" type="submit">Pagar con MercadoPago</button>
+<form action="#" >
+    <button class="btn btn-dark" type="submit">Pagar</button>
 </form>
 </div>
 

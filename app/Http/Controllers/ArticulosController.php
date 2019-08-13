@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\articulo;
+use App\carritoPivot;
+
 class ArticulosController extends Controller
 {
     /**
@@ -72,8 +74,12 @@ class ArticulosController extends Controller
     }
     public function borrar(Request $formulario){
       $id = $formulario["id"];
+      $eliminarCarrito = carritoPivot::where('id_product',$id);
+      $eliminarCarrito->delete();
       $articulo= Articulo::find($id);
       $articulo->delete();
+
+      
       return redirect ("/admin/articulos");
     }
     public function modificar($id){
