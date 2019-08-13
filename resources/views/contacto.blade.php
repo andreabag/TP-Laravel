@@ -13,7 +13,7 @@
 
 
                 <p><i class="far fa-envelope-open"></i> bigfashion@gmail.com</p>
-                <p><i class="fab fa-instagram"></i> bigfashionba</p>
+                <p><a href="https://www.instagram.com/bigfashionba/"><i class="fab fa-instagram"></i></a> bigfashionba</p>
 
 
                             </div>
