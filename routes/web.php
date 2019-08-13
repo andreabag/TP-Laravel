@@ -24,7 +24,7 @@ Route::get('/admin/agregarArticulo', function(){
 })->middleware("admin");
 Route::post('/administrador', 'ArticulosController@agregar');
 Route::get('/modificarArticulo/{id}', 'ArticulosController@modificar')->middleware("admin");
-Route::post('/borrarArticulo', 'ArticulosController@borrar')->middleware("admin");;
+Route::post('/borrarArticulo', 'ArticulosController@borrar')->middleware("admin");
 Route::post('/actualizarArticulo', 'ArticulosController@actualizarArticulo')->middleware("admin");;
 Route::get('/search','ArticulosController@buscar');
 Route::get('/contacto', function(){
@@ -32,3 +32,4 @@ Route::get('/contacto', function(){
 });
 Route::get('/admin/articulos', 'ArticulosController@adminIndex')->middleware("admin");
 Route::get('/carrito','CarritoController@index');
+Route::get('/detalleArticulo/{id}', 'ArticulosController@detalle');

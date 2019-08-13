@@ -17,9 +17,12 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
-          <div class="foto">
-            <img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt="">
-          </div>
+
+          <a href="{{ url("/detalleArticulo/{$articulo->id}") }}"><img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt=""></a>
+
+
+
+          <div class="card-body">
 
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
