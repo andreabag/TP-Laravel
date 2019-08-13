@@ -2,6 +2,7 @@
 @extends('layouts.app')
 <link href="{{ asset('css/articulos.css') }}" rel="stylesheet">
 @section('content')
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <!-- Page Content -->
 <div class="container">
     <h2 class="my-3"><i class="fas fa-tshirt"></i> Coleccion Invierno 2019</h2>
@@ -19,10 +20,12 @@
     @foreach ($articulos as $articulo)
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-150">
+          <div class="imagen">
+
 
           <a href="{{ url("/detalleArticulo/{$articulo->id}") }}"><img class="card-img-top" src="/storage/{{ $articulo->foto }}" alt=""></a>
 
-
+        </div>
 
           <div class="card-body">
             <h4 class="card-title">{{ $articulo->titulo}}</h4>
@@ -32,7 +35,7 @@
           <div class="card-footer">
             @guest
             <p>Registrese para agregar al carrito</p>
-            @else   
+            @else
             <form action="agregarACarrito/{{ $articulo->id }}">
               <button class="btn btn-dark w-50" type="submit"><i class="fas fa-cart-arrow-down"></i> Agregar</button>
             </form>
@@ -83,7 +86,7 @@ $( document ).ready(function() {
       data:{'search':$value},
       success:function(data){
         $('#respuesta').html('');
-        
+
         $.each(JSON.parse(data),function(i,obj){
           var row = $("<tr />");
           $('#respuesta').append(row);
