@@ -19,7 +19,7 @@ class ArticulosController extends Controller
         $like = '%' . $b . '%';
         $articulos = Articulo::
                 where('titulo','like',$like)
-                ->paginate(8);
+                ->paginate(9);
 
       $vac = compact("articulos");
 
@@ -31,7 +31,7 @@ class ArticulosController extends Controller
         $like = '%' . $b . '%';
         $articulos = Articulo::
                 where('titulo','like',$like)
-                ->paginate(8);
+                ->paginate(9);
 
       $vac = compact("articulos");
 
@@ -79,7 +79,7 @@ class ArticulosController extends Controller
       $articulo= Articulo::find($id);
       $articulo->delete();
 
-      
+
       return redirect ("/admin/articulos");
     }
     public function modificar($id){
