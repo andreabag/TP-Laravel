@@ -38,4 +38,6 @@ Route::get('/detalleArticulo/{id}', 'ArticulosController@detalle');
 Route::get('/eliminarDelCarrito/{id}', 'CarritoController@eliminar');
 Route::get('/restarUnaUnidad/{id}', 'CarritoController@restar');
 Route::get('/sumarUnaUnidad/{id}', 'CarritoController@sumar');
+Route::get('/agregarACarrito/{id}', 'CarritoController@agregar');
+
 
