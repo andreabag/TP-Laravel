@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\articulo;
+use App\Articulo;
 use App\carritoPivot;
 
 class ArticulosController extends Controller
@@ -16,7 +16,7 @@ class ArticulosController extends Controller
     public function index(Request $r)
     {
       $b = $r->input('buscar');
-        $like = '%' . $b . '%';
+        $like = '%' . $b . '%';p
         $articulos = Articulo::
                 where('titulo','like',$like)
                 ->paginate(9);
@@ -48,7 +48,7 @@ class ArticulosController extends Controller
         $like = '%' . $b . '%';
         $articulos = Articulo::
                 where('titulo','like',$like)->take(5)->get();
-        
+
       }
 
       return Response($articulos->toJson());
